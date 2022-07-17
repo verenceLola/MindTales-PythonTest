@@ -1,21 +1,12 @@
 from django.db import models
-
-
-class Meal(models.TextChoices):
-    """
-    meal choices
-    """
-
-    Breakfast = "BF"
-    Lunch = "L"
-    Dinner = "D"
+from .food_item import FoodItem
 
 
 class Menu(models.Model):
-    meal = models.CharField(choices=Meal.choices, max_length=50, default=Meal.Lunch)
     name = models.CharField(max_length=200, unique=True)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+    food = models.ManyToManyField(FoodItem)
 
     def __str__(self):
         return self.name
