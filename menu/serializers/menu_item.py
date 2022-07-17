@@ -6,10 +6,9 @@ from django.db.models import Count, Q
 
 class MenuItemSerializer(serializers.ModelSerializer):
     food = FoodItemSerializer(many=True)
-    votes = serializers.SerializerMethodField(method_name="get_votes")
+    votes = serializers.SerializerMethodField(method_name="get_votes", read_only=True)
 
     def get_votes(self, instance):
-
         menu_votes = (
             Menu.objects.filter(pk=instance.pk)
             .annotate(

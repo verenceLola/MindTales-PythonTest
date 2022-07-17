@@ -5,7 +5,7 @@ from menu.managers import MenuManager
 
 
 class Menu(models.Model):
-    name = models.CharField(max_length=200, unique=True)
+    name = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     food = models.ManyToManyField(FoodItem)
