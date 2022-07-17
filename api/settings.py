@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     # external apps
     "rest_framework",
     "rest_framework_simplejwt",
+    # apps
+    "menu"
 ]
 
 REST_FRAMEWORK = {
