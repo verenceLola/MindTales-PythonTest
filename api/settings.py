@@ -12,9 +12,14 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from typing import List
+from dotenv import dotenv_values
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# extract config froom .env file
+
+config = dotenv_values(".env")
 
 
 # Quick-start development settings - unsuitable for production
@@ -87,8 +92,12 @@ WSGI_APPLICATION = "api.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "mind-tales",
+        "USER": config.get("DATABASE_USER"),
+        "PASSWORD": config.get("DATABASE_PASSWORD"),
+        "HOST": config.get("DATABASE_HOST"),
+        "PORT": config.get("DATABASE_PORT"),
     }
 }
 
