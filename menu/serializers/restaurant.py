@@ -9,7 +9,7 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
     Restaurant Model Serializer
     """
 
-    menu = MenuItemSerializer()
+    menu = MenuItemSerializer(many=True)
 
     class Meta:
         model = Restaurant

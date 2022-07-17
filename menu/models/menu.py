@@ -1,5 +1,6 @@
 from django.db import models
 from .food_item import FoodItem
+from .vote import Vote
 
 
 class Menu(models.Model):
@@ -7,6 +8,7 @@ class Menu(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     food = models.ManyToManyField(FoodItem)
+    votes = models.ManyToManyField(Vote)
 
     def __str__(self):
         return self.name

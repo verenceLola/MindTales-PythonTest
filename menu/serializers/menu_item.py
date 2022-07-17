@@ -8,5 +8,5 @@ class MenuItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Menu
-        fields = ("name", "created_at", "updated_at", "food")
+        fields = ("name", "created_at", "updated_at", "food", "votes")
         read_only_fields = ("created_at", "updated_at")

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from menu.models import Restaurant, Menu, FoodItem
+from menu.models import Restaurant, Menu, FoodItem, Vote
 
 
 @admin.register(Restaurant)
@@ -14,4 +14,9 @@ class MenuAdmin(admin.ModelAdmin):
 
 @admin.register(FoodItem)
 class FoodItemAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Vote)
+class VoteAdmin(admin.ModelAdmin):
     pass
