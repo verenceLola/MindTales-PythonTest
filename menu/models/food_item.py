@@ -6,9 +6,9 @@ class Meal(models.TextChoices):
     meal choices
     """
 
-    Breakfast = "BF"
-    Lunch = "L"
-    Dinner = "D"
+    Breakfast = "Breakfast"
+    Lunch = "Lunch"
+    Dinner = "Dinner"
 
 
 class FoodItem(models.Model):
