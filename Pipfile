@@ -11,6 +11,8 @@ djangorestframework-simplejwt = "*"
 [dev-packages]
 mypy = "*"
 black = "*"
+django-stubs = "*"
+djangorestframework-stubs = "*"
 
 [requires]
 python_version = "3.9"
