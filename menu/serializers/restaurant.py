@@ -13,5 +13,5 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = ("url", "name", "created_at", "updated_at", "menu")
+        fields = ("url", "id", "name", "created_at", "updated_at", "menu")
         read_only_fields = ("created_at", "updated_at")

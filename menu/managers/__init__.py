@@ -1,2 +1,2 @@
 from .vote import VoteManager
-from .restaurant import RestaurantManager
+from .menu import MenuManager
